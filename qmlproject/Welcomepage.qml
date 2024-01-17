@@ -11,7 +11,7 @@ Window {
     visible: true
     title: qsTr("MQTT Project")
 
-    color: "Lavender"
+    color: "white"
 
     MenuBar {
 
@@ -19,8 +19,6 @@ Window {
             Material.foreground: Material.White
             Material.elevation: 6
             width: parent.width
-
-
 
             Menu {
                 title: "File"
@@ -98,79 +96,6 @@ Window {
             }
     }
 
- /*   GridLayout {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.margins: 10
-        columns: 1
-        anchors.fill: parent
-
-
-        Rectangle{
-            id: rectmenu
-            Layout.fillWidth: true
-            height: 60
-            color: "#80DEEA"
-            anchors.top: parent.top
-            radius: 5
-            Material.elevation: 6
-           // Material.foreground: Material.Pink
-            GridLayout{
-                anchors.margins: 5
-                columns: 3
-                anchors.fill: parent
-                columnSpacing: 5
-
-                Rectangle {
-                    id: telephoneLogo
-                        width: 50
-                        height: 50
-                        color: "red"
-                        radius: 5
-
-                        Text {
-                            id: textTele
-                            text: qsTr("Tel")
-                            font.family: "Bold"
-                            font.pointSize: 10
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                        }
-                    }
-                Rectangle {
-                    id: documentationrec
-                        width: 50
-                        height: 50
-                        color: "red"
-                        radius: 5
-                        Text {
-                            id: textDoc
-                            text: qsTr("Doc")
-                            font.family: "Bold"
-                            font.pointSize: 10
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                        }
-                    }
-                Rectangle {
-                    id: setuprec
-                        width: 50
-                        height: 50
-                        color: "red"
-                        radius: 5
-                        Text {
-                            id: textSet
-                            text: qsTr("Setup")
-                            font.family: "Bold"
-                            font.pointSize: 10
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                        }
-                    }
-
-            }
-
-        }
-    }*/
 
     GridLayout{
         id: gridlayoutid
@@ -192,7 +117,21 @@ Window {
                 id: textTemperature
                 text: qsTr("Temperature")
                 anchors.centerIn: parent
-                color: "White"
+                font.family: "Bold"
+                font.pointSize: 12
+                color: "black"
+            }
+            scale: 0.5
+            gradient: Gradient{
+                GradientStop{
+                    position: 0.0;color: "green"
+                }
+                GradientStop{
+                    position: 0.5;color: "Yellow"
+                }
+                GradientStop{
+                    position: 1.0;color: "red"
+                }
             }
         }
 
@@ -205,21 +144,47 @@ Window {
             Text {
                 id: textHumid
                 text: qsTr("Humidity")
+                font.family: "Bold"
+                font.pointSize: 12
                 anchors.centerIn: parent
-                color: "White"
+                color: "black"
+            }
+            gradient: Gradient{
+                GradientStop{
+                    position: 0.0;color: "blue"
+                }
+                GradientStop{
+                    position: 0.5;color: "white"
+                }
+                GradientStop{
+                    position: 1.0;color: "#77B5FE"
+                }
             }
         }
         Rectangle{
             id: recHour
             width: 110
             height: 110
-            color: "green"
+            //color: "green"
             radius: 20
             Text {
                 id: textHour
                 text: qsTr("Hours")
+                font.family: "Bold"
+                font.pointSize: 12
                 anchors.centerIn: parent
-                color: "White"
+                color: "black"
+            }
+            gradient: Gradient{
+                GradientStop{
+                    position: 0.0;color: "#77B5FE"
+                }
+                GradientStop{
+                    position: 0.5;color: "white"
+                }
+                GradientStop{
+                    position: 1.0;color: "blue"
+                }
             }
 
         }
@@ -227,22 +192,28 @@ Window {
             id: recAcc
             width: 110
             height: 110
-            //color: "blue"
+            color: "blue"
             radius: 20
             Text {
                 id: textAcc
                 text: qsTr("Accelerometre")
+                font.family: "Bold"
+                font.pointSize: 12
                 anchors.centerIn: parent
-                color: "White"
+                color: "black"
             }
-            Image {
-                id: imageId
-                anchors.fill: parent
-                fillMode: Image.PreserveAspectFit
-                source: "logo.png"
-                width: parent.width
-                height: parent.height
+            gradient: Gradient{
+                GradientStop{
+                    position: 0.0;color: "red"
+                }
+                GradientStop{
+                    position: 0.5;color: "white"
+                }
+                GradientStop{
+                    position: 1.0;color: "black"
+                }
             }
+
         }
     }
 

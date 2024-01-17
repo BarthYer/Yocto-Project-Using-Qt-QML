@@ -116,30 +116,25 @@ Window {
     Label {
 
         text: "User:"
-        //width: 100
         font.family: "Bold"
         font.pointSize: 12
     }
 
     TextField {
         id: userName
-        //width: 180
-       // height: 40
+
         placeholderText: "<Type your name>"
 
     }
     Label {
 
         text: "Password:"
-        //width: 100
         font.family: "Bold"
         font.pointSize: 12
     }
 
     TextField {
         id: password
-        //width: 180
-        //height: 40
         placeholderText: "<Your password>"
 
     }
