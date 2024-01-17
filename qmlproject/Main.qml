@@ -15,13 +15,16 @@ Window {
     //color: "#607D8B"
     color:"#DCDCDC"
 
-    function showState(val){
-        console.log("State QML est :" + val);
-    }
+
 
     //property
     property string stateOn: "ON"
     property string stateOff: "OFF"
+
+    function showState(val){
+        console.log("State QML est :" + val);
+    }
+
     MenuBar {
 
             Material.theme: Material.Dark
@@ -34,10 +37,50 @@ Window {
                 MenuItem {
                     text: "How to connect"
                     onTriggered: console.log("Open action How to connect")
+                    onClicked: {
+                        messageBoxHelp.open()
+                    }
+
+                Dialog {
+                    id: messageBoxHelp
+                    title: "Login step"
+                    modal: true
+
+                    contentItem: Text {
+                        text: "Login is the first step to access in your interface. So before to login, you should have your user name and password with your manager. if you don't have it contact us: barthelemyy56@gmail.com"
+                        wrapMode: Text.WordWrap
+                    }
+                    standardButtons: Dialog.Close
+
+                }
                 }
                 MenuItem {
                     text: "ERROR NAME"
                     onTriggered: console.log("Open action ERROR NAME")
+                }
+
+            }
+            Menu {
+                title: "Register"
+                MenuItem {
+                    text: "Sign UP"
+                    onTriggered: console.log("Permission Denied")
+
+                                onClicked: {
+                                    messageBox.open()
+                                }
+
+                            Dialog {
+                                id: messageBox
+                                title: "Message"
+                                modal: true
+
+                                contentItem: Text {
+                                    text: "Permission Denied!"
+                                    wrapMode: Text.WordWrap
+                                }
+                                standardButtons:Dialog.Close
+                            }
                 }
             }
     }
@@ -53,30 +96,30 @@ Window {
     Label {
 
         text: "User:"
-        width: 100
+        //width: 100
         font.family: "Bold"
         font.pointSize: 12
     }
 
     TextField {
         id: userName
-        width: 180
-        height: 40
+        //width: 180
+       // height: 40
         placeholderText: "<Type your name>"
 
     }
     Label {
 
         text: "Password:"
-        width: 100
+        //width: 100
         font.family: "Bold"
         font.pointSize: 12
     }
 
     TextField {
         id: password
-        width: 180
-        height: 40
+        //width: 180
+        //height: 40
         placeholderText: "<Your password>"
 
     }
@@ -145,7 +188,7 @@ Window {
 
     }
 
-    Rectangle{
+   Rectangle{
         id: retval
         x:10
         y:150
