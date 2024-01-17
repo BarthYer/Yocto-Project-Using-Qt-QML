@@ -17,6 +17,7 @@ Window {
 
 
 
+
     //property
     property string stateOn: "ON"
     property string stateOff: "OFF"
@@ -83,7 +84,26 @@ Window {
                             }
                 }
             }
+            Menu {
+                title: "Edit Screen"
+
+                MenuItem {
+                    text: "Color"
+                    onTriggered: console.log("Open action How to connect")
+                    onClicked: {
+                        messageBoxColor.open()
+                    }
+                    Dialog {
+                        id: messageBoxColor
+                        title: "Change the color"
+                        modal: true
+
+                        standardButtons:Dialog.Close
+                    }
+                 }
+            }
     }
+
 
     GridLayout {
 
